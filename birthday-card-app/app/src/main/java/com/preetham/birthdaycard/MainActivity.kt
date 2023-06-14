@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BirthdayText(message = "Happy Birthday Preetham!", from = "From Android")
+                    BirthdayImage(message = "Happy Birthday Preetham!", from = "From Android")
                 }
             }
         }
@@ -63,11 +64,19 @@ fun BirthdayText(message: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun BirthdayImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(id = R.drawable.androidparty)
-
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        BirthdayText(
+            message = message,
+            from = from,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
+    }
 }
 
 @Preview(showBackground = true)

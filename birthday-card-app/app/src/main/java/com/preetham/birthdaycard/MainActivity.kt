@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.preetham.birthdaycard.ui.theme.BirthdayCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayText(message: String, modifier: Modifier = Modifier) {
     Text(
-        text = message
+        text = message,
+        fontSize = 100.sp,
+        lineHeight = 116.sp
     )
 
 }

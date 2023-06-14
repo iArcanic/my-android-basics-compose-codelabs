@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BirthdayText(message = "Happy Birthday Preetham!")
+                    BirthdayText(message = "Happy Birthday Preetham!", from = "From Android")
                 }
             }
         }
@@ -31,11 +31,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun BirthdayText(message: String, modifier: Modifier = Modifier) {
+fun BirthdayText(message: String,from: String, modifier: Modifier = Modifier) {
     Text(
         text = message,
         fontSize = 100.sp,
         lineHeight = 116.sp
+    )
+    Text(
+        text = from
     )
 
 }
@@ -44,6 +47,6 @@ fun BirthdayText(message: String, modifier: Modifier = Modifier) {
 @Composable
 fun BirthdayCardPreview() {
     BirthdayCardTheme {
-        BirthdayText(message = "Happy Birthday Preetham!")
+        BirthdayText(message = "Happy Birthday Preetham!", from = "From Android")
     }
 }
